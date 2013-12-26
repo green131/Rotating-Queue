@@ -1,3 +1,4 @@
+
 public class ListEmptyException extends Exception {
 	private static final long serialVersionUID = -1682608072399516248L;
 }

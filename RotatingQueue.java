@@ -1,12 +1,12 @@
 public class RotatingQueue {
-	private int[] list;
+	private Object[] list;
 	private int top;
 	private int bottom;
 	private int size;
 	private int contains;
 	
 	public RotatingQueue(int size) {
-		list = new int[size];
+		list = new Object[size];
 		top = 0;
 		bottom = 0;
 		this.size = size;
@@ -35,7 +35,7 @@ public class RotatingQueue {
 		}
 	}
 	
-	public void Push(int x) throws ListFullException {
+	public void Push(Object x) throws ListFullException {
 		if (isFull()) {
 			ListFullException q = new ListFullException();
 			throw q;
@@ -47,7 +47,7 @@ public class RotatingQueue {
 			bottom = 0;
 	}
 	
-	public void PushPriority(int x) throws ListFullException {
+	public void PushPriority(Object x) throws ListFullException {
 		if (isFull()) {
 			ListFullException q = new ListFullException();
 			throw q;
@@ -60,18 +60,26 @@ public class RotatingQueue {
 		contains++;
 	}
 	
-	public int Pop() throws ListEmptyException {
+	public Object Pop() throws ListEmptyException {
 		if (isEmpty()) {
 			ListEmptyException q = new ListEmptyException();
 			throw q;
 		}
-		int ret = list[top];
-		list[top] = 0;
+		Object ret = list[top];
+		list[top] = null;
 		top++;
 		contains--;
 		if (top == size)
 			top = 0;
 		return ret;
+	}
+	
+	public Object GetNext() throws ListEmptyException {
+		if (isEmpty()) {
+			ListEmptyException q = new ListEmptyException();
+			throw q;
+		}
+		return list[top];
 	}
 	
 	public String toString() {
