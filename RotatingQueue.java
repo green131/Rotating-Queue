@@ -2,13 +2,15 @@ public class RotatingQueue {
 	private Object[] list;
 	private int top;
 	private int bottom;
-	private int size;
-	private int contains;
+	
+	public int size;
+	public int contains;
 	
 	public RotatingQueue(int size) {
 		list = new Object[size];
 		top = 0;
 		bottom = 0;
+		if ( size < 1 ) size = 1;
 		this.size = size;
 	}
 	
