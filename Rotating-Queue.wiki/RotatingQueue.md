@@ -1,6 +1,0 @@
-## RotatingQueue
-
-```java
-class RotatingQueue 
-```
-

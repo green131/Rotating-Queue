@@ -1,6 +1,0 @@
-## Runable
-
-```java
-class Runable 
-```
-

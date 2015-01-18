@@ -1,6 +1,0 @@
-## PriorityQueue
-
-```java
-class PriorityQueue 
-```
-
